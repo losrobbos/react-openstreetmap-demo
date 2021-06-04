@@ -13,7 +13,11 @@ So you do not need to make any API calls on your own to display maps & map locat
 
 All you need are "geo location" points: a point on the world map specified by a pair of "latitude" and "longitude" 
 
-Such a geo location you can pass as prop to the "Marker" component of React-Leaflet. Et voila! The location will be displayed visually on a map. Checkout the code and try for yourself if you don't believe me, buddy...
+Such a geo location you can pass as prop to the "Marker" component of React-Leaflet. 
+
+`<Marker position={position} icon={locationIcon}>`
+
+Et voila! The location will be displayed visually on a map. Checkout the code and try for yourself if you don't believe me, buddy...
 
 React Leaflet - Getting started Guide: https://react-leaflet.js.org/
 
