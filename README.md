@@ -24,6 +24,8 @@ The package "node-open-geocoder" provides you with that service out of the box -
 
 `npm i node-open-geocoder`
 
+Usage example:
+
 ```
 const openGeocoder = require('node-open-geocoder');
 
@@ -33,6 +35,8 @@ openGeocoder()
   .geocode( myAddress ) // lookup geo locations for this address
   .end((err, res) => {
     // now in res you will have the result as an array of objects. Each object has the fields "lat" and "lon"
+    // why an array? well, sometimes for the same address you may get multiple results. 
+    // so the more clear the address is, you may just receive one geo location object back. But always inside an array
     // now you can feed this data into the React-Leaflet marker "position" attribute. Et voila! 
   })
 ```
