@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# React Map display
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This example shows you how to display a map using:
+
+- Leaflet - a vanilla JS library for displaying maps)
+- React-Leaflet - a wrapper for Leaflet, so you can use components for displaying maps
+
+The Leaflet library uses the <b>Openstreetmaps API</b> under the hood. So you do not need to make any API calls to display map locations.
+
+All you need are geo-location points with latitude and logitude and place those with the "Marker" component on the Map.
+
+How to convert real addresses into a Latitude / Longitude map point??
+
+You can again use openstreetmap for this. The package "node-open-geocoder" provides you with that service out of the box - it will take over all the calls to openstreetmap under the hood for ya:
+
+`npm i node-open-geocoder`
+
+```
+const openGeocoder = require('node-open-geocoder');
+
+const myAddress = '135 pilkington avenue, birmingham'
+
+openGeocoder()
+  .geocode( myAddress ) // lookup geo locations for this address
+  .end((err, res) => {
+    // now in res you will have the result as an array of objects. Each object has the fields "lat" and "lon"
+    // now you can feed this data into the React-Leaflet marker "position" attribute. Et voila! 
+  })
+```
+
+Enjoy!
 
 ## Available Scripts
 
