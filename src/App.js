@@ -16,17 +16,12 @@ function App() {
   return (
     <div className="map-container">
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
-        {/* Colored tile layer */}
+
+        {/* Colored tile layer - also other tile layers are available - you can google those :)*/}
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
-        {/* Greyish retro tile layer as alternative */}
-        {/* <TileLayer
-            attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-        /> */}
 
         {/* Location on the map */}
         <Marker position={position} icon={locationIcon}>
