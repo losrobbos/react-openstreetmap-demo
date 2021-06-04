@@ -1,9 +1,15 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import './App.css';
-import "leaflet/dist/leaflet.css";
+import './App.css'; 
+import "leaflet/dist/leaflet.css"; // important: loading the map CSS from leaflet
 
+/** 
+ * IMPORTANT: in your CSS, e.g. App.css, you must set a height on the class "leaflet-contaner"
+ * Otherwise the map will not display (blank screen)
+ * Enjoy :)
+*/ 
 function App() {
-  const position = [52.50, 13.30]
+
+  const position = [52.50, 13.30] // latitude / longite => easter egg :)
   const zoom = 13
 
   return (
