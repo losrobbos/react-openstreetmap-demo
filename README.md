@@ -21,6 +21,21 @@ Et voila! The location will be displayed visually on a map. Checkout the code an
 
 React Leaflet - Getting started Guide: https://react-leaflet.js.org/
 
+## Leaflet bug
+
+Since version 3.2 there is a bug in the React Leaflet core library which gives you an "Unexpected token" error on startup. The last working version is actually 2.7 (!).
+
+The most straight forward fix is to NOT install react leaflet using "npm i react-leaflet".
+
+Instead put these lines into you package.json dependencies and run `npm i` afterwards:
+
+```
+"react-leaflet": ">=3.1.0 <3.2.0 || ^3.2.1",
+"@react-leaflet/core": ">=1.0.0 <1.1.0 || ^1.1.1",
+```
+
+Now your React app should startup successfully.
+
 
 ## How to convert a real address into a Latitude / Longitude geo location??
 
