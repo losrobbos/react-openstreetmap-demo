@@ -9,9 +9,12 @@ The Leaflet library uses the <b>Openstreetmaps API</b> under the hood.
 
 So you do not need to make any API calls on your own to display maps & map locations! Isn't that nice?
 
-All you need are "geo location" points: a point on the world map specified by a pair of "latitude" and "logitude" 
+All you need are "geo location" points: a point on the world map specified by a pair of "latitude" and "longitude" 
 
 Such a geo location you can place the "Marker" component on your React-Leaflet map. Et voila! Checkout the code and try for yourself...
+
+React Leaflet - Getting started Guide: https://react-leaflet.js.org/
+
 
 ## How to convert a real address into a Latitude / Longitude geo location??
 
