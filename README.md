@@ -5,6 +5,8 @@ This example shows you how to display a map using:
 - Leaflet - a vanilla JS library for displaying maps
 - React-Leaflet - a wrapper for Leaflet, so you can use components for displaying maps
 
+Demo: https://leaflet-mappie.vercel.app/
+
 The Leaflet library uses the <b>Openstreetmaps API</b> under the hood. 
 
 So you do not need to make any API calls on your own to display maps & map locations! Isn't that nice?
