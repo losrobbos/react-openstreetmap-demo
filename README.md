@@ -40,7 +40,8 @@ openGeocoder()
     // Each object has the fields "lat" and "lon"
     // Why an array of geo locations? 
     // Well, sometimes for the same address you may get multiple results. 
-    // So the more clear the address is, you may just receive one geo location object back. 
+    // So the more clear the address is, you may receive an array with just 
+    // one geo location object back. Or you simply always pick the first entry from the array. 
     // Now you can feed this geo data into the React-Leaflet marker "position" attribute. 
     // Et voila! The location of your address should get displayed. Enjoy big brothering... 
   })
