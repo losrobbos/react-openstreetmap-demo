@@ -3,7 +3,7 @@ import './App.css';
 import "leaflet/dist/leaflet.css"; // important: loading the map CSS from leaflet
 
 /** 
- * IMPORTANT: in your CSS, e.g. App.css, you must set a height on the class "leaflet-contaner"
+ * IMPORTANT: in your CSS, e.g. App.css, you must set a height on the class "leaflet-container"
  * Otherwise the map will not display (blank screen)
  * Enjoy :)
 */ 
