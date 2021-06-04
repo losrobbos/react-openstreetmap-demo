@@ -36,11 +36,34 @@ const myAddress = '135 pilkington avenue, birmingham'
 openGeocoder()
   .geocode( myAddress ) // lookup geo locations for this address
   .end((err, res) => {
-    // now in res you will have the result as an array of objects. Each object has the fields "lat" and "lon"
-    // why an array? well, sometimes for the same address you may get multiple results. 
-    // so the more clear the address is, you may just receive one geo location object back. But always inside an array
-    // now you can feed this data into the React-Leaflet marker "position" attribute. Et voila! 
+    // now in res you will have the result as an array of objects. 
+    // Each object has the fields "lat" and "lon"
+    // Why an array of geo locations? 
+    // Well, sometimes for the same address you may get multiple results. 
+    // So the more clear the address is, you may just receive one geo location object back. 
+    // Now you can feed this geo data into the React-Leaflet marker "position" attribute. 
+    // Et voila! The location of your address should get displayed. Enjoy big brothering... 
   })
 ```
 
+## Tilemaps - Get style to your map
+
+A map is constructed of blocks, the so called "tiles".
+
+Leaflet provides you with different "map styles" for these tiles.
+
+This is how you setup a map using the "tile layer" component and load a style from the web: 
+
+```
+<TileLayer
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+```
+
+The "url" attribute is the URL to the tile / map style. 
+
+You can simply google for different free tile layers (there are plenty) for leaflet to fit your desired map style.
+
 Enjoy!
+
