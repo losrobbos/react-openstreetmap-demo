@@ -29,9 +29,11 @@ React Leaflet - Getting started Guide: https://react-leaflet.js.org/
 
 ## Leaflet bug
 
-Since version 3.2 there is a bug in the React Leaflet core library which gives you an "Unexpected token" error on startup. The last working version is actually 2.7 (!).
+Since major version 3 there is a bug in the React Leaflet core library which gives you an "Unexpected token" error on startup. The last working version actually seems to be 2.7 (!).
 
-The most straight forward fix is to NOT install react leaflet using "npm i react-leaflet".
+We could downgrade to version 2.7, but then all code samples in the React Leaflet documentation would not work anymore.
+
+So the most straight forward fix is to NOT install react leaflet using "npm i react-leaflet".
 
 Instead put these lines into you package.json dependencies and run `npm i` afterwards:
 
