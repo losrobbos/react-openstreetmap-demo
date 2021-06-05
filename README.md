@@ -37,11 +37,13 @@ Instead put these lines into you package.json dependencies and run `npm i` after
 Now your React app should startup successfully.
 
 
-## How to convert a real address into a Latitude / Longitude geo location??
+## Convert address into geo location?
 
-You can use openstreetmap for this too!
+Let's say you have an address like 'Turmstraße 53, 10551 Berlin, Germany'. And now you wanna find the geolocation (Latitude & Longitude) for that address to display it on your freakin' map!
 
-The package "node-open-geocoder" provides you with that service out of the box - it will take over all the calls to openstreetmap under the hood for ya to convert an address into a map point:
+You can use the Openstreetmap API for this too. 
+
+The package "node-open-geocoder" provides you with that conversion service out of the box. It will take over all the calls to openstreetmap under the hood for ya to convert an address into a geo location map point:
 
 `npm i node-open-geocoder`
 
@@ -65,6 +67,9 @@ openGeocoder()
     // Et voila! The location of your address should get displayed. Enjoy big brothering... 
   })
 ```
+
+Et voilá: Now you can place addresses of venues or people on a map.
+
 
 ## Tilemaps - Get style to your map
 
