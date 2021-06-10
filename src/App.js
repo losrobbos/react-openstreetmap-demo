@@ -1,7 +1,9 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { useState } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import './App.css'; 
 import "leaflet/dist/leaflet.css"; // important: loading the map CSS from leaflet
 import { locationIcon } from './MarkerIconsCustom'
+import openGeoCoder from 'node-open-geocoder'
 
 /** 
  * IMPORTANT: in your CSS, e.g. App.css, you must set a height on the class "leaflet-container"
@@ -10,12 +12,42 @@ import { locationIcon } from './MarkerIconsCustom'
 */ 
 function App() {
 
-  const position = [52.50, 13.30] // latitude / longite => easter egg :)
-  const zoom = 13
+  const [position, setPosition] = useState([52.50, 13.30]) // latitude / longite => easter egg :)
+  const zoom = 20
+  const [address, setAddress] = useState('')
+  const [error, setError] = useState('')
+
+  function ChangeView({ center, zoom }) {
+    const map = useMap();
+    map.setView(center, zoom);
+    return null;
+  }
+
+  const changePosition = () => {
+    openGeoCoder()
+    .geocode( address ) // lookup geo locations for this address
+    .end((err, res) => {
+
+      if(err || (res && res.length == 0)) {
+        setError("Location not found!")
+        return
+      }
+
+      const { lat, lon } = res[0]
+      // let posNew = [Number(lat).toFixed(2), Number(lon).toFixed(2)]
+      let posNew = [lat, lon]
+      console.log(position, posNew)
+      setPosition(posNew)
+      setError("")
+    })
+
+  }
 
   return (
     <div className="map-container">
       <MapContainer center={position} zoom={zoom} scrollWheelZoom={false}>
+        <ChangeView center={position} zoom={zoom} /> 
+
 
         {/* Colored tile layer - also other tile layers are available - you can google those :)*/}
         <TileLayer
@@ -30,6 +62,9 @@ function App() {
           </Popup>
         </Marker>
       </MapContainer>
+      <input placeholder="Enter street address..." onChange={(e) => setAddress(e.target.value) } />
+      <button onClick={changePosition} >Go to address</button>
+      <div style={{ color: 'red', fontWeight: 'bold' }}>{error}</div>
     </div>
   );
 
