@@ -17,8 +17,10 @@ function App() {
   const [address, setAddress] = useState('')
   const [error, setError] = useState('')
 
+  // this custom component will handle all changes of incoming position props of the map
+  // once the prop "center" has changed, we will move the parent map to the new location
   function ChangeView({ center, zoom }) {
-    const map = useMap();
+    const map = useMap(); // access the parent map using the useMap hook
     map.setView(center, zoom);
     return null;
   }
