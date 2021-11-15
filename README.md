@@ -45,6 +45,17 @@ Instead put these lines into you package.json dependencies and run `npm i` after
 Now your React app should startup successfully.
 
 
+## Switching map location programmatically
+
+The map position can only be set initially by setting "center" prop of the MapContainer component.
+
+Even if you manage the value of "center" prop in state, changes of the state will NOT trigger a re-placement of the map.
+
+Find here a way how you can move the map position using a tiny sub component:
+
+https://stackoverflow.com/questions/64665827/react-leaflet-center-attribute-does-not-change-when-the-center-state-changes
+
+
 ## Convert address into geo location?
 
 Let's say you have an address like 'Turmstraße 53, 10551 Berlin, Germany'. And now you wanna find the geolocation (Latitude & Longitude) for that address to display it on your freakin' map!
